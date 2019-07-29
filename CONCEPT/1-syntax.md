@@ -1,29 +1,42 @@
-## AST (or ASG: abstract syntax graph)
+## syntax
 
 So how data should be structured in **graph data**?
 
-basic syntax for graph is: (lisp-like)
+Sort of like AST (or ASG: abstract syntax graph).
+
+Basic syntax for graph is nested lists: (so a lisp-like syntax is used here)
 ```lisp
 (syntax TYPE string) ;; name of syntax like: "defineConst|array|struct|..."
 
-(syntax ID u64) ;; unique id for the result of the expr
+(syntax DEF_ID u64) ;; unique id for the result of the define expr
 (syntax REF_ID u64) ;; reference to id
 
 (syntax RES_ID u64) ;; reference to resource id
 (syntax NAME_RES_ID u64) ;; reference to resource id, specifically for name of defined result
 
 (syntax EXPR (oneOf
-  (TYPE ID NAME_RES_ID EXPR_LIST) ;; mostly for variable define
-  (TYPE ID NAME_RES_ID)
-  (TYPE ID EXPR_LIST)
+  (TYPE DEF_ID NAME_RES_ID EXPR_LIST) ;; mostly for variable define
+  (TYPE DEF_ID NAME_RES_ID)
+  (TYPE DEF_ID EXPR_LIST)
   (TYPE REF_ID) ;; mostly for variable/resource reference
   (TYPE RES_ID)
+  (TYPE EXPR_LIST)
 ))
 (syntax EXPR_LIST (oneOf
   (exprList EXPR EXPR EXPR EXPR ...) ;; should have at least 2 EXPR, or just use below EXPR
   EXPR ;; also accept single EXPR
 ))
 ```
+
+And for resource, a map is used:
+```yaml
+R00:  'VALUE_STRING'
+R01:  1
+R02:  [ 1, 'VALUE_STRING' ]
+R03:  { a: 1, b: 'B', c: [] }
+R04:  data:application/octet-stream;base64,0123456789ABCD== # https://en.wikipedia.org/wiki/Data_URI_scheme
+R05:  data:image/png;base64,0123456789ABCD==
+``` 
 
 #### syntax - define
 Suppose the sample JS code:
@@ -213,9 +226,6 @@ Then represent the code in graph:
   ;; define "+" as LANG_G00_D00
 ))
 ```
-
-
-## WIP: not finished
 
 
 ## TODO: more sample with lisp-like syntax:
