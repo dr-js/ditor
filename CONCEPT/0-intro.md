@@ -9,12 +9,12 @@ What this should be, briefly:
 Almost all code is saved as **text** file, and the editor is also **text** based.
 All extra code analysis starts from **text**, even for heavy all-in-one IDEs.
 
-#### text stores **reference** badly (code link, dependency)
-Though very simple, text is also a very limiting data format.
+#### Text is bad for storing **references** (code link, dependency)
+Despite its simplicity, text is a very limited data format.
 
 Consider most of the code we write, we are actually doing two things:
-**reference** other function, other value,
-then use the **reference** to compose blocks of expressions.
+**referencing** other function and values,
+then use the **references** to compose blocks of expressions.
 
 With text the **reference** is exist temporarily,
 in an active IDE or during compiling.
