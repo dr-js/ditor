@@ -35,11 +35,10 @@ Consider some of the convenience features an IDE provides, like:
 It's very basic for graph data structure, but difficult for text.
 
 #### prefer **strong-reference** than **strong-typed**
-Something related about the code we are writing,
-is most of us consider **strong-typed** language is safer,
-since the basic tooling will do more strict check.
+Most of us consider **strongly-typed** languages to be safer,
+because their basic tools do stricter checks.
 
-But non-strong-typed language, with advanced/varied tooling,
+However, non-strong-typed language, with advanced/varied tooling,
 is also actively being used, with reasonable confidence of safety.
 
 So the sense of safety may not come directly from the **strong-typed** syntax,
@@ -57,17 +56,16 @@ which is weak and tricky to maintain.
 
 Graph allow **reference** beyond one language, and beyond just code.
 It'll be much better, if both the code and the editor know
-this image file is referenced by that block of code.
+which image file is referenced by which block of code.
 
 #### for an unfamiliar language, graph is more readable & understandable than actual code
-For some code, the text syntax can be confusing.
+For some languages, the text syntax can be confusing.
 Which makes the verbose form - graph or AST - more approachable,
-if the editor maps the two form side by side,
+if the editor maps the two forms side by side,
 is may be a good way to learn the syntax.
 
-And it should also help when reading some compressed spaghetti code,
-or read long && expression without sufficient parenthesis to mark the precedence,
-may save a lot of head scratching.
+It should also help when reading dense spaghetti code,
+or long expressions without sufficient parentheses to indicate operator precedence.
 
 #### graph editor could replace some **tooling** for re-format, transpile, minify, repack
 In JS tooling, there are commonly used **tooling** for:
@@ -83,25 +81,25 @@ so **tooling** code can skip all the text step, do the magic simpler and faster.
 
 And with the reduced complexity, a basic editor may support it directly.
 It'll be good to have a relatively simple editor, with lower cpu & memory usage than an IDE,
-but support heavier feature like code formatting, output transpiled/minimized/packed code.
+but support heavier features like code formatting and outputting transpiled/minimized/packed code.
 
 #### editing graph in editor should be more readable, and require less key stroke
-Consider rendering the graph as text for a familiar editing experience.
+Consider rendering the graph as text as a familiar editing experience.
 
-And since the text render is done dynamically and locally,
+Since the text rendering is done dynamically and locally,
 each one can use their output style config to get what they read most comfortably.
 and skip the whole fuss about how text code should be styled: it's un-styled graph, job done.
 
-And when writing the code, the auto complete can be more confidant about what we want to type,
+Then, when writing code, the auto completion can be more confident about what we want to type,
 since the data in graph is pre-sorted and generally typed.
 
 #### editor language support means define the text render syntax, the valid graph structure, and predefined system lib to reference from
-For a graph base editor to support a language, some definition/rules should be provided:
+For a graph base editor to support a language, some definitions/rules should be provided:
 - A rule to render syntax is needed for correctly getting the text code output from the graph data.
 - A definition of graph structure is needed to limit the graph the the code inside is actually within the language syntax.
 - One or more predefined system lib to reference system function/value from,
   so the types and lib-functions can be globally available.
 
 #### translate graph to multiple similar language (practical maybe?)
-Another possibility is to support output/transpile to multiple similar language from a shared graph,
-this will allow some basic/common logic being shared more easily, skip tedious manual translation.
+Another possibility is to support output/transpile to multiple similar languages from a shared graph,
+which will enable some basic/common logic to be shared more easily, skipping tedious manual translation.
