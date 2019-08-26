@@ -5,7 +5,7 @@ What this should be, briefly:
 - an editor to edit the graph data, output text code,
   and provide some handy IDE support (format/rename/reference-check/transpile/minimize/...)
 
-#### text currently is most code's save format
+#### Text is the most popular code storage format
 Almost all code is saved as **text** file, and the editor is also **text** based.
 All extra code analysis starts from **text**, even for heavy all-in-one IDEs.
 
@@ -19,16 +19,15 @@ then use the **references** to compose blocks of expressions.
 With text the **reference** is exist temporarily,
 in an active IDE or during compiling.
 
-Every time we save the code to text file, exit out editor, the **reference** is gone,
-then next time the editor will have to parse & restore the **reference** from the opened file,
-again, and again.
+Every time we save the code to text file, exit from the editor, the **references** will be gone.
+Next time the editor launches, it will have to re-parse the **references** from the opened file.
 
 #### text edits badly, when we do code refactor or other thing that's **reference** changing
-Though view the code as colored text is not bad,
-and most IDE will support hover for type definition,
+Although it's not terrible viewing the code as highlighted text,
+and most IDEs support hover for type definition,
 editing the text is still indirect.
 
-Consider most of the support an IDE provides, like:
+Consider some of the convenience features an IDE provides, like:
 - use variable initials to speed up **reference** (`rAF` + `TAB` -> `requestAnimationFrame`)
 - jump to definition
 - show undefined or unused variables
