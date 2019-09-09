@@ -10,14 +10,15 @@ Basic syntax for graph is nested lists: (so a lisp-like syntax is used here)
 
 (syntax DEF_ID u64) ;; unique id for the result of the define expr
 (syntax REF_ID u64) ;; reference to id
+(syntax REF_ID u64 u64 ...) ;; reference to foreign id
 
 (syntax RES_ID u64) ;; reference to resource id
-(syntax NAME_RES_ID u64) ;; reference to resource id, specifically for name of defined result
+(syntax RES_ID u64 u64 ...) ;; reference to foreign resource id
 
 (syntax EXPR (oneOf
-  (TYPE DEF_ID NAME_RES_ID EXPR_LIST) ;; mostly for variable define
-  (TYPE DEF_ID NAME_RES_ID)
-  (TYPE DEF_ID EXPR_LIST)
+  (TYPE DEF_ID RES_ID EXPR_LIST) ;; mostly for variable define & assign value
+  (TYPE DEF_ID RES_ID) ;; mostly for variable define
+  (TYPE DEF_ID EXPR_LIST) ;; mostly for code strcture function, scope or loop
   (TYPE REF_ID) ;; mostly for variable/resource reference
   (TYPE RES_ID)
   (TYPE EXPR_LIST)
@@ -88,9 +89,9 @@ Then represent the code in graph:
   )))
   (defineConst D03 R03 (resId R030))
   (defineConst D04 R04 (struct (exprList 
-    (structItem (exprList (resId R040) (resId R000)))
-    (structItem (exprList (resId R041) (resId R042)))
-    (structItem (exprList (resId R043) (resId R044)))
+    (structEntry (exprList (resId R040) (resId R000)))
+    (structEntry (exprList (resId R041) (resId R042)))
+    (structEntry (exprList (resId R043) (resId R044)))
   )))
   (defineConst D05 R05 (resId R050))
 ))
@@ -123,7 +124,7 @@ Then represent the code in graph:
   (assign (exprList (refId D00) (resId R01)))
   (assign (exprList
     (refId D00)
-    (invoke (exprList (refId LANG_G00_D00) (refId D00) (resId R01)))
+    (invoke (exprList (refId LANG_G00 D00) (refId D00) (resId R01)))
   ))
 ))
 ```
@@ -173,13 +174,13 @@ Then represent the code in graph:
   (defineConst D00 R00 (resId R01))
   (scope (exprList
     (defineConst D01 R00 (resId R01))
-    (invoke (exprList (refId LANG_G00_D00) (refId D01)))
+    (invoke (exprList (refId LANG_G00 D00) (refId D01)))
   ))
-  (invoke (exprList (refId LANG_G00_D00) (refId D00)))
+  (invoke (exprList (refId LANG_G00 D00) (refId D00)))
 ))
 
 (graph LANG_G00 (exprList
-  ;; define "console.log" as LANG_G00_D00
+  ;; define "console.log" as LANG_G00 D00
 ))
 ```
 
@@ -187,7 +188,6 @@ Then represent the code in graph:
 Suppose the sample JS code:
 ```js
 const add = (a, b) => {
-  console.log(a)
   return a + b
 }
 ```
@@ -216,14 +216,16 @@ Then represent the code in graph:
       ))
       ;; here the scope strcutre is reused in function
       (scope (exprList
-        (invoke (exprList (refId LANG_G00_D00) (refId D01) (refId D02)))
+        (functionReturn (exprList
+          (invoke (exprList (refId LANG_G00 D00) (refId D01) (refId D02)))
+        ))
       ))
     ))
   ))
 ))
 
 (graph LANG_G00 (exprList
-  ;; define "+" as LANG_G00_D00
+  ;; define "+" as LANG_G00 D00
 ))
 ```
 
