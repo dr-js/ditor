@@ -1,5 +1,5 @@
-import { stringifyEqual } from 'dr-js/module/common/verify'
-import { BASIC_EXTENSION_MAP } from 'dr-js/module/common/module/MIME'
+import { stringifyEqual } from '@dr-js/core/module/common/verify'
+import { BASIC_EXTENSION_MAP } from '@dr-js/core/module/common/module/MIME'
 import {
   packResMap,
   parseResMap

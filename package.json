@@ -1,17 +1,18 @@
 {
   "private": true,
   "name": "dr-graph-editor",
-  "version": "0.0.0-dev.0",
+  "version": "0.0.0-dev.1",
   "description": "WIP: Idea for a graph based code editor",
   "author": "dr-js",
   "license": "MIT",
   "repository": "github:dr-js/dr-graph-editor",
   "scripts": {
+    "// script ======================": "",
     "script-pack": "node -r @babel/register ./script quiet pack",
     "script-pack-test": "node -r @babel/register ./script verbose pack test",
     "script-publish": "node -r @babel/register ./script pack publish",
     "script-publish-dev": "node -r @babel/register ./script pack publish-dev",
-    "script-generate-spec": "cross-env BABEL_ENV=use-source node -r @babel/register ./script/generateSpec ./tempFileDelete.config.json",
+    "script-generate-spec": "node -r @babel/register ./script/generateSpec",
     "// build =======================": "",
     "build-library-babel": "babel ./source --out-dir ./output-gitignore/library --ignore source/browser/",
     "build-library-babel-dev": "cross-env BABEL_ENV=dev npm run build-library-babel -- --watch",
@@ -27,12 +28,13 @@
     "prepack": "echo \"Error: pack with script-*\" && exit 1"
   },
   "engines": {
-    "node": ">=10.16",
-    "npm": ">=6.10"
+    "node": ">=12.13",
+    "npm": ">=6.12"
   },
   "devDependencies": {
-    "dr-dev": "0.0.7-dev.3",
-    "dr-dev-babel": "0.0.7-dev.3",
-    "dr-js": "0.23.0-dev.4"
-  }
+    "@dr-js/core": "0.2.0-dev.6",
+    "@dr-js/dev": "0.2.0-dev.1",
+    "@dr-js/dev-babel": "0.2.0-dev.1"
+  },
+  "sideEffects": false
 }

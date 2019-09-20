@@ -1,5 +1,5 @@
-import { isBasicArray } from 'dr-js/module/common/check'
-import { createTreeDepthFirstSearch } from 'dr-js/module/common/data/Tree'
+import { isBasicArray } from '@dr-js/core/module/common/check'
+import { createTreeDepthFirstSearch } from '@dr-js/core/module/common/data/Tree'
 
 // refList is nested list, the value should be all-ID (string) and subList (array)
 

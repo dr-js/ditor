@@ -4,8 +4,8 @@
 
 WIP: Idea for a graph based code editor
 
-[i:ci]: https://img.shields.io/travis/dr-js/dr-graph-editor/master.svg
-[l:ci]: https://travis-ci.org/dr-js/dr-graph-editor
+[i:ci]: https://img.shields.io/github/workflow/status/dr-js/dr-graph-editor/ci-test
+[l:ci]: https://github.com/dr-js/dr-graph-editor/actions?query=workflow:ci-test
 
 [//]: # (NON_PACKAGE_CONTENT)
 

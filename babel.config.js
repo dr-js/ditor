@@ -1,3 +1,3 @@
-const { getBabelConfig } = require('dr-dev/library/babel')
+const { getBabelConfig } = require('@dr-js/dev/library/babel')
 
 module.exports = getBabelConfig()

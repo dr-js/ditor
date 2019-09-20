@@ -1,6 +1,6 @@
-import { isBasicObject } from 'dr-js/module/common/check'
-import { BASIC_EXTENSION_MAP } from 'dr-js/module/common/module/MIME'
-import { encode, decode } from 'dr-js/module/common/data/DataUri'
+import { isBasicObject } from '@dr-js/core/module/common/check'
+import { BASIC_EXTENSION_MAP } from '@dr-js/core/module/common/module/MIME'
+import { encode, decode } from '@dr-js/core/module/common/data/DataUri'
 
 // basic types
 

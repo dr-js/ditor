@@ -1,4 +1,4 @@
-import { stringifyEqual } from 'dr-js/module/common/verify'
+import { stringifyEqual } from '@dr-js/core/module/common/verify'
 import {
   packRefList,
   parseRefList
