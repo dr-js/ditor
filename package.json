@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dr-graph-editor",
-  "version": "0.0.0-dev.1",
+  "version": "0.0.0-dev.2",
   "description": "WIP: Idea for a graph based code editor",
   "author": "dr-js",
   "license": "MIT",
@@ -32,9 +32,9 @@
     "npm": ">=6.12"
   },
   "devDependencies": {
-    "@dr-js/core": "0.2.0-dev.6",
-    "@dr-js/dev": "0.2.0-dev.1",
-    "@dr-js/dev-babel": "0.2.0-dev.1"
+    "@dr-js/core": "0.3.0-dev.5",
+    "@dr-js/dev": "0.3.0-dev.4",
+    "@dr-js/dev-babel": "0.3.0-dev.4"
   },
   "sideEffects": false
 }
