@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "dr-graph-editor",
-  "version": "0.0.0-dev.3",
+  "name": "@dr-js/ditor",
+  "version": "0.0.0-dev.4",
   "description": "WIP: Idea for a graph based code editor",
   "author": "dr-js",
   "license": "MIT",
-  "repository": "github:dr-js/dr-graph-editor",
+  "repository": "github:dr-js/ditor",
   "scripts": {
     "// script ======================": "",
     "script-pack": "node -r @babel/register ./script quiet pack",

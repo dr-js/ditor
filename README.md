@@ -1,11 +1,11 @@
-# dr-graph-editor
+# @dr-js/ditor
 
 [![i:ci]][l:ci]
 
 WIP: Idea for a graph based code editor
 
-[i:ci]: https://img.shields.io/github/workflow/status/dr-js/dr-graph-editor/ci-test
-[l:ci]: https://github.com/dr-js/dr-graph-editor/actions?query=workflow:ci-test
+[i:ci]: https://img.shields.io/github/workflow/status/dr-js/ditor/ci-test
+[l:ci]: https://github.com/dr-js/ditor/actions?query=workflow:ci-test
 
 [//]: # (NON_PACKAGE_CONTENT)
 

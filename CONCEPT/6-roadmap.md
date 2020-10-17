@@ -1,12 +1,52 @@
 ## Roadmap
 
-- [ ] design basic graph data structure to store information equivalents to or richer than JS
-- [ ] build graph editor
-  - [ ] build basic graph editor server
-  - [ ] build basic web graph editor client
-  - [ ] design basic output rule of JS or WASM
-  - [ ] support output JS or WASM syntax from graph editor
-- [ ] build basic diff graph data tool
-  - [ ] build basic diff server
-  - [ ] build basic cli diff client
-  - [ ] support diff common resource types
+- [ ] initial (mostly with JS & WASM)
+  - [ ] graph data structure
+    - [ ] design basic graph data structure to store information equivalents to or richer than JS
+    - [ ] design graph data structure text format
+    - [ ] design graph data structure binary format
+    - [ ] design&bake basic output rule of the latest JS or WASM
+  - [ ] graph editor
+    - [ ] build basic graph editor server
+    - [ ] build basic web graph editor client
+    - [ ] support output the latest JS or WASM syntax from graph editor
+  - [ ] graph data diff tool
+    - [ ] build basic diff server
+    - [ ] build basic cli diff client
+    - [ ] support diff common resource types
+
+- [ ] expand (maybe move to compiled language)
+  - [ ] graph data structure
+    - [ ] expand graph data structure
+      - [ ] for compiled language
+      - [ ] for non-GCed language
+      - [ ] for super-strong-typed language
+    - [ ] design&bake output rule
+      - [ ] of zig/C/C++ and go/rust/JAVA
+      - [ ] for different versions of the same language
+  - [ ] graph editor
+    - [ ] IDE like UI
+    - [ ] plugin support
+    - [ ] code style(lint)
+    - [ ] import from text file
+    - [ ] integrate diff tool and more
+    - [ ] fast native server
+    - [ ] cli client
+  - [ ] graph data diff tool
+    - [ ] create/apply patch
+    - [ ] fast native server
+    - [ ] web/GUI client
+
+- [ ] madness (self-host multi-language)
+  - [ ] graph data structure
+    - [ ] support functional language
+    - [ ] TODO
+  - [ ] graph editor
+    - [ ] debugger
+    - [ ] output tree-shaking & minify
+    - [ ] output x86/arm assembly
+    - [ ] employ deep optimization like llvm/gcc
+    - [ ] TODO
+  - [ ] graph data diff tool
+    - [ ] diff for common resource type
+    - [ ] TODO
