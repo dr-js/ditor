@@ -1,4 +1,4 @@
-## syntax
+## Syntax
 
 So how data should be structured in **graph data**?
 

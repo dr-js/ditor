@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "dr-graph-editor",
-  "version": "0.0.0-dev.2",
+  "version": "0.0.0-dev.3",
   "description": "WIP: Idea for a graph based code editor",
   "author": "dr-js",
   "license": "MIT",
@@ -15,10 +15,10 @@
     "script-generate-spec": "node -r @babel/register ./script/generateSpec",
     "// build =======================": "",
     "build-library-babel": "babel ./source --out-dir ./output-gitignore/library --ignore source/browser/",
-    "build-library-babel-dev": "cross-env BABEL_ENV=dev npm run build-library-babel -- --watch",
-    "build-module": "cross-env BABEL_ENV=module babel ./source --out-dir ./output-gitignore/module",
+    "build-library-babel-dev": "dr-dev --EE BABEL_ENV=dev -E -- npm run build-library-babel -- --watch",
+    "build-module": "dr-dev --EE BABEL_ENV=module -E -- babel ./source --out-dir ./output-gitignore/module",
     "// test ========================": "",
-    "test-dev": "cross-env BABEL_ENV=dev dr-dev --TR @babel/register -T source/common/data/GraphResMap.test.js",
+    "test-dev": "dr-dev --EE BABEL_ENV=dev -E -- dr-dev --TR @babel/register -T source/common/data/GraphResMap.test.js",
     "test-source": "dr-dev --TR @babel/register -T source/ --TFS .test.js",
     "test-output-library": "dr-dev -T output-gitignore/library/ --TFS .test.js",
     "test-output-module": "dr-dev --TR @babel/register -T output-gitignore/module/ --TFS .test.js",
@@ -28,13 +28,13 @@
     "prepack": "echo \"Error: pack with script-*\" && exit 1"
   },
   "engines": {
-    "node": ">=12.13",
-    "npm": ">=6.12"
+    "node": ">=12.16",
+    "npm": ">=6.14"
   },
   "devDependencies": {
-    "@dr-js/core": "0.3.0-dev.5",
-    "@dr-js/dev": "0.3.0-dev.4",
-    "@dr-js/dev-babel": "0.3.0-dev.4"
+    "@dr-js/core": "0.4.0-dev.5",
+    "@dr-js/dev": "0.4.0-dev.4",
+    "@dr-js/dev-babel": "0.4.0-dev.4"
   },
   "sideEffects": false
 }

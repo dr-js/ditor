@@ -6,7 +6,7 @@ import { encode, decode } from '@dr-js/core/module/common/data/DataUri'
 
 __DEV__ && console.log({
   sampleResMap: new Map(Object.entries({
-    // basic value as JSON
+    // basic value as JSON (except Object)
     R00: 'string',
     R01: 1234,
     R02: true,
@@ -17,7 +17,7 @@ __DEV__ && console.log({
     R11: { type: 'binary', value: new ArrayBuffer(8) },
     R13: { type: 'file', value: new ArrayBuffer(8), mime: BASIC_EXTENSION_MAP.png, name: 'file.png' },
 
-    // TODO: maybe useful, as plugin?
+    // TODO: maybe useful, as plugin? or use just x for extension like HTTP header
     R14: { type: 'plugin:url', value: 'https://a.b/c' },
     R16: { type: 'plugin:repo', value: 'github:dr-js/dr-js' },
     R15: { type: 'plugin:package.json', value: { name: 'name', version: '0.0.0' } }
